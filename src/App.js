@@ -19,8 +19,8 @@ class App extends Component {
 	render() {
 		return (
 			<div id="wrap">
-				<Sidebar getMessages={this.getMessages} />
 				<Content channel={this.state.channel} />
+				<Sidebar getMessages={this.getMessages} />
 			</div>
 		)
 	}

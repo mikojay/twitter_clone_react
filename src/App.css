@@ -7,7 +7,7 @@ html, body {
 #wrap {
 	height: 100vh;
 	display: grid;
-	grid-template-columns: 200px auto;
+	grid-template-rows: 750px 100px;
 }
 
 .signup {

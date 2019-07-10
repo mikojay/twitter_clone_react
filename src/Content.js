@@ -56,6 +56,7 @@ class Content extends Component {
 	render() {
 		return (
 			<div id="content">
+				<NewMessage createMessage={this.createMessage} />
 				<div id="messages">
 					{
 						this.state.messages.map((m) => {
@@ -63,7 +64,6 @@ class Content extends Component {
 						})
 					}
 				</div>
-				<NewMessage createMessage={this.createMessage} />
 			</div>
 		)
 	}

@@ -1,7 +1,11 @@
 #content {
 	background: #e6ecf0;
 	display: grid;
-	grid-template-rows: auto 80px;
+	grid-template-rows: auto 700px;
+}
+
+.topbar {
+	background: green;
 }
 
 #content #messages {
@@ -13,7 +17,7 @@
 #content #new-message {
 	padding: 20px;
 	border-top: 1px solid #ddd;
-	background: #f8f8f8;
+	background: #e8f5fd;
 }
 
 #content .message {
