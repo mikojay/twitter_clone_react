@@ -53,38 +53,11 @@ class App extends Component {
 	</div>
 	<div className="row p-4">
 		<div className="col p-2 text-center d-flex justify-content-center flex-column">
+			<Sidebar/>
 			<Content/>
 		</div>
 	</div>
 	<div className="row">
-		<div className="col text-center bg-info p-4">
-			<h2 className="tweets text-left font-weight-bold">Latest Tweets</h2>
-			<Sidebar/>
-				<div className="message">
-					<div className="author text-left">Sebastian Zwackelbart</div>
-						<div className="date text-right">Jul 10th</div>
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-					<div className="hashtags">Hashtag1</div>
-				</div>
-				<div className="message">
-					<div className="author text-left">Jane Doe</div>
-						<div className="date text-right">Jul 10th</div>
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-					<div className="hashtags">Hashtag1</div>
-				</div>
-				<div className="message">
-					<div className="author text-left">JavaScriptFan_1</div>
-						<div className="date text-right">Jul 10th</div>
-					<p>Lorem ipsum dolor sit amet.</p>
-					<div className="hashtags">Hashtag1</div>
-				</div>
-				<div className="message">
-					<div className="author text-left">John Snow</div>
-						<div className="date text-right">Jul 10th</div>
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-					<div className="hashtags">Hashtag1</div>
-				</div>
-		</div>
 	</div>
 </div>
 		)

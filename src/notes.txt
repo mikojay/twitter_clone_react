@@ -1,8 +1,12 @@
+
+APPS.JS
 <div id="wrap">
 	<Content channel={this.state.channel} />
 	<Sidebar getMessages={this.getMessages} />
 </div>
 
+
+SIDEBAR.JS:
 <div id="sidebar">
 	<h2>{this.state.workspace}</h2>
 	<h3>Channels</h3>
@@ -14,3 +18,55 @@
 		}
 	</ul>
 </div>
+
+CONTENT.JS:
+
+
+
+NEW MESSAGE.JS:
+<div id="new-message">
+	<form onSubmit={(e) => {
+			this.props.createMessage(e, this.state.text); this.clearMessage()}
+		}>
+		<div className="input-group">
+			<input type="text" className="form-control" placeholder="New Message..." value={this.state.text} onChange={(e) => this.changeText(e)} />
+			<div className="input-group-append">
+				<button type="submit" className="btn btn-success">Send</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+MESSAGE.JS
+<div className="message">
+	<span className="author">{this.state.message.author.name}</span>
+	<span className="date">{this.state.message.date}</span>
+	<div className="body">{this.state.message.body}</div>
+</div>
+
+
+
+// <div className="message">
+// 	<div className="author text-left">Sebastian Zwackelbart</div>
+// 		<div className="date text-right">Jul 10th</div>
+// 	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+// 	<div className="hashtags">Hashtag1</div>
+// </div>
+// <div className="message">
+// 	<div className="author text-left">Jane Doe</div>
+// 		<div className="date text-right">Jul 10th</div>
+// 	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+// 	<div className="hashtags">Hashtag1</div>
+// </div>
+// <div className="message">
+// 	<div className="author text-left">JavaScriptFan_1</div>
+// 		<div className="date text-right">Jul 10th</div>
+// 	<p>Lorem ipsum dolor sit amet.</p>
+// 	<div className="hashtags">Hashtag1</div>
+// </div>
+// <div className="message">
+// 	<div className="author text-left">John Snow</div>
+// 		<div className="date text-right">Jul 10th</div>
+// 	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+// 	<div className="hashtags">Hashtag1</div>
+// </div>
