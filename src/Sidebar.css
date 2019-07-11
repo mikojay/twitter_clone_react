@@ -1,6 +1,4 @@
 #sidebar {
-	background: #3a133e;
-	color: #c2b7c5;
 	padding: 20px;
 }
 /* #sidebar h2 {
@@ -12,7 +10,7 @@
 #sidebar h3 {
 	padding: 5px;
 	font-size: 15px;
-}
+}*/
 
 #sidebar li {
 	padding: 5px 10px;
@@ -21,14 +19,20 @@
 }
 
 #sidebar li:hover {
-	background: #220326;
+	background: #3399ff;
 	color: #fff;
-} */
+	font-weight: bold;
+}
 
 #sidebar li.active {
 	background: #fc9923;
 	color: #fff;
+
 }
 span.hashtags {
 	padding: 30px;
+}
+
+#sidebar ul li {
+	display: inline;
 }

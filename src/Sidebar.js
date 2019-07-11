@@ -6,8 +6,30 @@ import axios from 'axios'
 class Sidebar extends Component {
 	// Data
 	state = {
-		workspace: 'Use these Hashtags',
-		channels: []
+		channels: [
+			{
+			id: 1,
+			name: "coding",
+		},{
+			id: 2,
+			name: "js",
+		},{
+			id: 3,
+			name: "lol",
+		},{
+			id: 4,
+			name: "trump",
+		},{
+			id: 5,
+			name: "food",
+		},{
+			id: 6,
+			name: "bootcamp",
+		},{
+			id: 7,
+			name: "kosamui",
+		}
+	]
 	}
 	// Lifecycle
 	componentWillMount() {
@@ -24,21 +46,19 @@ class Sidebar extends Component {
 	selectChannel = (id) => {
 		let channels = this.state.channels
 		channels.forEach((c) => delete c.active)
-		let channel = channels.find((c) => c._id === id)
+		let channel = channels.find((c) => c.id === id)
 		channel.active = true
 		this.setState({channels})
-		this.props.getMessages(id)
+		// this.props.getMessages(id)
 	}
 	// Render
 	render() {
 		return (
 			<div id="sidebar">
-				<h2>{this.state.workspace}</h2>
-				<h3>Channels</h3>
 				<ul className="list-unstyled">
 					{
 						this.state.channels.map((c) => {
-							return <Channel channel={c} key={c._id} selectChannel={this.selectChannel} />
+							return <Channel channel={c} key={c.id} selectChannel={this.selectChannel} />
 						})
 					}
 				</ul>
