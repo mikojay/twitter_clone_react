@@ -6,7 +6,7 @@ import axios from 'axios'
 class Sidebar extends Component {
 	// Data
 	state = {
-		workspace: 'Tortuga Coders',
+		workspace: 'Use these Hashtags',
 		channels: []
 	}
 	// Lifecycle
@@ -32,12 +32,17 @@ class Sidebar extends Component {
 	// Render
 	render() {
 		return (
-			<div className="hashtags text-center">
-				<span className="hashtags">Hashtag1</span>
-				<span className="hashtags">Hashtag2</span>
-				<span className="hashtags">Hashtag3</span>
-				<span className="hashtags">Hashtag4</span>
-					</div>
+			<div id="sidebar">
+				<h2>{this.state.workspace}</h2>
+				<h3>Channels</h3>
+				<ul className="list-unstyled">
+					{
+						this.state.channels.map((c) => {
+							return <Channel channel={c} key={c._id} selectChannel={this.selectChannel} />
+						})
+					}
+				</ul>
+			</div>
 				)
 	}
 }

@@ -22,13 +22,17 @@ class NewMessage extends Component {
 	// Render
 	render() {
 		return (
-			<div className="NewMessage">
-				<div className="input-group input-group-lg">
-					<div className="input-group-prepend">
-						<button type="submit" className="btn btn-success">Send</button>
+			<div id="new-message">
+				<form onSubmit={(e) => {
+						this.props.createMessage(e, this.state.text); this.clearMessage()}
+					}>
+					<div className="input-group">
+						<input type="text" className="form-control" placeholder="New Tweet..." value={this.state.text} onChange={(e) => this.changeText(e)} />
+						<div className="input-group-append">
+							<button type="submit" className="btn btn-success">Send</button>
+						</div>
 					</div>
-					<input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
-				</div>
+				</form>
 			</div>
 		)
 	}

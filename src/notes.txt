@@ -6,43 +6,17 @@ APPS.JS
 </div>
 
 
-SIDEBAR.JS:
-<div id="sidebar">
-	<h2>{this.state.workspace}</h2>
-	<h3>Channels</h3>
-	<ul className="list-unstyled">
-		{
-			this.state.channels.map((c) => {
-				return <Channel channel={c} key={c._id} selectChannel={this.selectChannel} />
-			})
-		}
-	</ul>
-</div>
+
 
 CONTENT.JS:
 
 
 
 NEW MESSAGE.JS:
-<div id="new-message">
-	<form onSubmit={(e) => {
-			this.props.createMessage(e, this.state.text); this.clearMessage()}
-		}>
-		<div className="input-group">
-			<input type="text" className="form-control" placeholder="New Message..." value={this.state.text} onChange={(e) => this.changeText(e)} />
-			<div className="input-group-append">
-				<button type="submit" className="btn btn-success">Send</button>
-			</div>
-		</div>
-	</form>
-</div>
+
 
 MESSAGE.JS
-<div className="message">
-	<span className="author">{this.state.message.author.name}</span>
-	<span className="date">{this.state.message.date}</span>
-	<div className="body">{this.state.message.body}</div>
-</div>
+
 
 
 

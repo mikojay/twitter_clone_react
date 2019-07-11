@@ -17,10 +17,11 @@ class Message extends Component {
 	render() {
 		return (
 			<div className="message">
-				<div className="author text-left">Jaschi Mikolajski</div>
-					<div className="date text-right">Jul 10th</div>
-				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-				<div className="hashtags">Hashtag1</div>
+				<span className="author">{this.state.message.author}</span>
+				<span className="date">{this.state.message.date}</span>
+				<div className="body">{this.state.message.body}</div>
+				<div className="hashtag">{this.state.message.hashtag}</div>
+
 			</div>
 		)
 	}
