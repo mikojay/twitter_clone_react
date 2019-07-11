@@ -32,18 +32,30 @@ class Sidebar extends Component {
 	// Render
 	render() {
 		return (
-			<div id="sidebar">
-				<h2>{this.state.workspace}</h2>
-				<h3>Channels</h3>
-				<ul className="list-unstyled">
-					{
-						this.state.channels.map((c) => {
-							return <Channel channel={c} key={c._id} selectChannel={this.selectChannel} />
-						})
-					}
-				</ul>
-			</div>
-		)
+			<div className="hashtags text-center">
+						<nav className="navbar navbar-expand-lg navbar-light bg-light">
+							<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span className="navbar-toggler-icon"></span>
+							</button>
+							<div className="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul className="navbar-nav mr-auto">
+									<li className="nav-item active">
+										<span className="nav-link">#Hashtag1<span className="sr-only">(current)</span></span>
+									</li>
+									<li className="nav-item">
+										<a className="nav-link">#Hashtag2</a>
+									</li>
+									<li className="nav-item">
+										<a className="nav-link">#Hashtag3</a>
+									</li>
+									<li className="nav-item">
+										<a className="nav-link">#Hashtag4</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				)
 	}
 }
 

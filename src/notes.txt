@@ -1,0 +1,16 @@
+<div id="wrap">
+	<Content channel={this.state.channel} />
+	<Sidebar getMessages={this.getMessages} />
+</div>
+
+<div id="sidebar">
+	<h2>{this.state.workspace}</h2>
+	<h3>Channels</h3>
+	<ul className="list-unstyled">
+		{
+			this.state.channels.map((c) => {
+				return <Channel channel={c} key={c._id} selectChannel={this.selectChannel} />
+			})
+		}
+	</ul>
+</div>
