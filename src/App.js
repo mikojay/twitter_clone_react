@@ -53,8 +53,8 @@ class App extends Component {
 	</div>
 	<div className="row p-4">
 		<div className="col p-2 text-center d-flex justify-content-center flex-column">
-			<Sidebar/>
-			<Content/>
+			<Sidebar getMessages={this.getMessages}/>
+			<Content channel={this.state.channel}/>
 		</div>
 	</div>
 	<div className="row">
