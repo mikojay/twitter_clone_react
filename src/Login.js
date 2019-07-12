@@ -30,6 +30,7 @@ class Login extends Component {
 					error: ''
 				})
 				localStorage.setItem('token', res.data.token)
+				this.props.auth()
 			}
 		}).catch((err) => {
 			console.log('err', err)
