@@ -23,10 +23,7 @@ changePassword = (e) => {
 signup = (e) => {
 	e.preventDefault()
 	axios.post('http://localhost:4000/api/signup', this.state).then((res) => {
-		console.log('res', res)
 		localStorage.setItem('token', res.data.token)
-		let x = localStorage.getItem('token')
-		console.log('x', x)
 	}).catch((err) => {
 		console.log('err', err)
 	})
