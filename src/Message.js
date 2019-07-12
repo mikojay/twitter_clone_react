@@ -10,7 +10,7 @@ class Message extends Component {
 	// Functions
 	componentWillMount() {
 		let message = this.state.message
-		message.date = moment(message.date).format('D MMM YYYY - h:mma')
+		message.date = moment(message.date).format('D MMM YYYY - H:mm')
 		this.setState({message})
 	}
 	// Render

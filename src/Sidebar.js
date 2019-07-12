@@ -9,11 +9,14 @@ class Sidebar extends Component {
 		channels: []
 	}
 	// Lifecycle
-	componentWillMount() {
+	componentDidMount() {
 		axios.get('http://localhost:4000/api/channels').then((res) => {
+			res.data[0].active = true
 			this.setState({
 				channels: res.data
 			})
+			this.selectChannel(res.data[0]._id)
+			console.log('res.data[0]', res.data[0])
 		}).catch((err) => {
 			console.log('err', err)
 		})
