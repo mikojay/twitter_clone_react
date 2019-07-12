@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import Sidebar from './Sidebar'
 import Content from './Content'
+import Signup from './Signup'
 
 class App extends Component {
 	// Data
@@ -53,8 +54,7 @@ class App extends Component {
 	</div>
 	<div className="row p-4">
 		<div className="col p-2 text-center d-flex justify-content-center flex-column">
-			<Sidebar getMessages={this.getMessages}/>
-			<Content channel={this.state.channel}/>
+			<Signup />
 		</div>
 	</div>
 	<div className="row">

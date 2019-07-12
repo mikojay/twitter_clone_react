@@ -9,14 +9,12 @@ CHANNEL.js
 <li className={ this.state.channel.active ? 'active' : '' } onClick={() => this.props.selectChannel(this.state.channel._id)}># {this.state.channel.name}</li>
 
 CONTENT.JS:
-
-
-
 NEW MESSAGE.JS:
-
-
 MESSAGE.JS
 
+App.js
+<Sidebar getMessages={this.getMessages}/>
+<Content channel={this.state.channel}/>
 
 
 

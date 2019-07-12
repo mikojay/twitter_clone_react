@@ -3,10 +3,14 @@ import React, {Component} from 'react'
 class Signup extends Component {
 	// Data
 	state = {
-
+		name: '',
+		email: '',
+		password: ''
 	}
 	// Functions
-
+	changeName = (e) => {
+		this.setState({name: e.target.value})
+	}
 	// Render
 	render() {
 		return (
@@ -16,7 +20,7 @@ class Signup extends Component {
 						<div className="card-body">
 							<form>
 								<div className="form-group">
-									<input type="text" className="form-control" placeholder="Full Name..." />
+									<input type="text" className="form-control" placeholder="Full Name..." value={this.state.name} onChange={(e) => this.changeName(e)} />
 								</div>
 								<div className="form-group">
 									<input type="email" className="form-control" placeholder="Email..." />
