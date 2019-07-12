@@ -41,10 +41,10 @@ signup = (e) => {
 									<input type="text" className="form-control" placeholder="Full Name..." value={this.state.name} onChange={(e) => this.changeName(e)} />
 								</div>
 								<div className="form-group">
-									<input type="email" className="form-control" placeholder="Email..." onChange={(e) => this.changeEmail(e)} />
+									<input type="email" className="form-control" placeholder="Email..." value={this.state.email} onChange={(e) => this.changeEmail(e)} />
 								</div>
 								<div className="form-group">
-									<input type="password" className="form-control" placeholder="Password..." onChange={(e) => this.changePassword(e)} />
+									<input type="password" className="form-control" placeholder="Password..." value={this.state.password} onChange={(e) => this.changePassword(e)} />
 								</div>
 								<button type="submit" className="btn btn-success">Signup</button>
 							</form>

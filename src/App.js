@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import Sidebar from './Sidebar'
 import Content from './Content'
-import Signup from './Signup'
+
 
 class App extends Component {
 	// Data
