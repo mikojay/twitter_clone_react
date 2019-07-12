@@ -17,7 +17,7 @@ class Message extends Component {
 	render() {
 		return (
 			<div className="message">
-				<span className="author">{this.state.message.author}</span>
+				<span className="author">{this.state.message.author.name}</span>
 				<span className="date">{this.state.message.date}</span>
 				<div className="body">{this.state.message.body}</div>
 				<div className="hashtag">{this.state.message.hashtag}</div>

@@ -6,30 +6,7 @@ import axios from 'axios'
 class Sidebar extends Component {
 	// Data
 	state = {
-		channels: [
-			{
-			id: 1,
-			name: "coding",
-		},{
-			id: 2,
-			name: "js",
-		},{
-			id: 3,
-			name: "lol",
-		},{
-			id: 4,
-			name: "trump",
-		},{
-			id: 5,
-			name: "food",
-		},{
-			id: 6,
-			name: "bootcamp",
-		},{
-			id: 7,
-			name: "kosamui",
-		}
-	]
+		channels: []
 	}
 	// Lifecycle
 	componentWillMount() {
@@ -58,7 +35,7 @@ class Sidebar extends Component {
 				<ul className="list-unstyled">
 					{
 						this.state.channels.map((c) => {
-							return <Channel channel={c} key={c.id} selectChannel={this.selectChannel} />
+							return <Channel channel={c} key={c._id} selectChannel={this.selectChannel} />
 						})
 					}
 				</ul>
