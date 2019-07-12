@@ -34,10 +34,8 @@ class Content extends Component {
 	createMessage = (e, text) => {
 		e.preventDefault()
 		let message = {
-			author: "@WhoEverYouAre",
-			date: "12 Jul 2019",
 			body: text,
-			hashtag: "#coding",
+			channel: this.props.channel
 		}
 		// axios.post(
 		// 	'http://localhost:4000/api/messages',
@@ -46,14 +44,20 @@ class Content extends Component {
 		// 		Authorization: `Bearer ${localStorage.getItem('token')}`
 		// 	}}
 		// ).then((res) => {
+			axios.post(
+			'http://localhost:4000/api/messages',
+			message,
+			{headers: {
+				Authorization: `Bearer ${localStorage.getItem('token')}`
+			}}
+		).then((res) => {
 			let messages = this.state.messages
-			messages.push(message)
+			messages.push(res.data)
 			this.setState({messages})
+		}).catch((err) => {
+			console.log('err', err)
+		})
 
-
-		// .catch((err) => {
-		// 	console.log('err', err)
-		// })
 	}
 
 	// Render
