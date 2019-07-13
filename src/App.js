@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import Sidebar from './Sidebar'
 import Content from './Content'
-
+import Logout from './Logout'
+import Home from './home'
 
 class App extends Component {
 	// Data
@@ -24,7 +25,7 @@ class App extends Component {
 	<div className="row">
 		<div className="col p-2 d-flex justify-content-between">
 			<span>
-				<i className="fas fa-home"></i>
+				<Home/>
 			</span>
 			<span>
 				<i className="far fa-bell"></i>
@@ -35,18 +36,8 @@ class App extends Component {
 				Messages
 			</span>
 		</div>
-		<div className="col p-2 text-center">
-			<span>
-				<i className="fab fa-twitter"></i>
-			</span>
-		</div>
 		<div className="col p-2 text-right">
-			<span>
-				<div className="input-group mb-3">
-
-<input type="text" className="form-control" placeholder="Search Twitter" aria-label="Recipient's username" aria-describedby="button-addon2"/>
-</div>
-			</span>
+			<Logout/>
 		</div>
 	</div>
 	<div className="row p-4">

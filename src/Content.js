@@ -12,7 +12,8 @@ class Content extends Component {
 	// Functions
 
 	componentWillMount() {
-		axios.get('http://localhost:4000/api/messages').then((res) => {
+
+		axios.get(`${process.env.REACT_APP_API}/api/messages`).then((res) => {
 			this.setState({
 				messages: res.data
 			})
@@ -21,8 +22,10 @@ class Content extends Component {
 		})
 	}
 
+
+
 	componentWillReceiveProps(props) {
-		axios.get(`http://localhost:4000/api/messages?channel=${props.channel}`).then((res) => {
+		axios.get(`${process.env.REACT_APP_API}/api/messages?channel=${props.channel}`).then((res) => {
 			this.setState({
 				messages: res.data
 			})
@@ -44,13 +47,15 @@ class Content extends Component {
 		// 		Authorization: `Bearer ${localStorage.getItem('token')}`
 		// 	}}
 		// ).then((res) => {
+		console.log('message mmmmmmm', message);
 			axios.post(
-			'http://localhost:4000/api/messages',
+			`${process.env.REACT_APP_API}/api/messages`,
 			message,
 			{headers: {
 				Authorization: `Bearer ${localStorage.getItem('token')}`
 			}}
 		).then((res) => {
+			console.log('ERROR', res);
 			let messages = this.state.messages
 			messages.push(res.data)
 			this.setState({messages})

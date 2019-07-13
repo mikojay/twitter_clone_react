@@ -10,13 +10,12 @@ class Sidebar extends Component {
 	}
 	// Lifecycle
 	componentDidMount() {
-		axios.get('http://localhost:4000/api/channels').then((res) => {
-			res.data[0].active = true
+		axios.get(`${process.env.REACT_APP_API}/api/channels`).then((res) => {
+
 			this.setState({
 				channels: res.data
 			})
-			this.selectChannel(res.data[0]._id)
-			console.log('res.data[0]', res.data[0])
+
 		}).catch((err) => {
 			console.log('err', err)
 		})
@@ -26,10 +25,10 @@ class Sidebar extends Component {
 	selectChannel = (id) => {
 		let channels = this.state.channels
 		channels.forEach((c) => delete c.active)
-		let channel = channels.find((c) => c.id === id)
+		let channel = channels.find((c) => c._id === id)
 		channel.active = true
 		this.setState({channels})
-		// this.props.getMessages(id)
+		this.props.getMessages(id)
 	}
 	// Render
 	render() {

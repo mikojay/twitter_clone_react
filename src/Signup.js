@@ -22,7 +22,7 @@ changePassword = (e) => {
 
 signup = (e) => {
 	e.preventDefault()
-	axios.post('http://localhost:4000/api/signup', this.state).then((res) => {
+	axios.post(`${process.env.REACT_APP_API}/api/signup`, this.state).then((res) => {
 		localStorage.setItem('token', res.data.token)
 		this.props.auth()
 	}).catch((err) => {
@@ -35,8 +35,9 @@ signup = (e) => {
 		return (
 			<div className="row">
 				<div className="col-4 offset-4">
-					<div className="card signup">
+					<div className="card signup bg-info">
 						<div className="card-body">
+							<h2>Signup</h2>
 							<form onSubmit={(e) => this.signup(e)}>
 								<div className="form-group">
 									<input type="text" className="form-control" placeholder="Full Name..." value={this.state.name} onChange={(e) => this.changeName(e)} />

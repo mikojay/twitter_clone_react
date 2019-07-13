@@ -20,7 +20,7 @@ class Login extends Component {
 
 	login = (e) => {
 		e.preventDefault()
-		axios.post('http://localhost:4000/api/login', this.state).then((res) => {
+		axios.post(`${process.env.REACT_APP_API}/api/login`, this.state).then((res) => {
 			if (!res.data.token) {
 				this.setState({
 					error: res.data
@@ -42,8 +42,9 @@ class Login extends Component {
 		return (
 			<div className="row">
 				<div className="col-4 offset-4">
-					<div className="card signup">
+					<div className="card signup bg-info">
 						<div className="card-body">
+							<h2>Login</h2>
 							<form onSubmit={(e) => this.login(e)}>
 								<div className="form-group">
 									<input type="email" className="form-control" placeholder="Email..." value={this.state.email} onChange={(e) => this.changeEmail(e)} />
